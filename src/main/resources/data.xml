@@ -1,0 +1,30 @@
+<transactions>
+    <transaction>
+        <transaction_id>111111</transaction_id>
+        <account_number>222222</account_number>
+        <transaction_date>01/01/2022-12:00</transaction_date>
+        <transaction_type>D</transaction_type>
+        <transaction_amount>12345.6789</transaction_amount>
+    </transaction>
+    <transaction>
+        <transaction_id>333333</transaction_id>
+        <account_number>444444</account_number>
+        <transaction_date>02/02/2022-12:15</transaction_date>
+        <transaction_type>A</transaction_type>
+        <transaction_amount>678.90</transaction_amount>
+    </transaction>
+    <transaction>
+        <transaction_id>555555</transaction_id>
+        <account_number>666666</account_number>
+        <transaction_date>03/03/2022-12:30</transaction_date>
+        <transaction_type>C</transaction_type>
+        <transaction_amount>123.45</transaction_amount>
+    </transaction>
+    <transaction>
+        <transaction_id>777777</transaction_id>
+        <account_number>888888</account_number>
+        <transaction_date>04/04/2022-12:45</transaction_date>
+        <transaction_type>B</transaction_type>
+        <transaction_amount>9876.54</transaction_amount>
+    </transaction>
+</transactions>

@@ -1,26 +1,19 @@
 package com.example.bankspringbatch.processors;
 
-import com.example.bankspringbatch.entities.BankTransaction;
+import com.example.bankspringbatch.dtos.TransactionCsvDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemProcessor;
-import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Slf4j
-public class TransactionItemProcessor implements ItemProcessor<BankTransaction, BankTransaction> {
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
+public class TransactionItemProcessor implements ItemProcessor<TransactionCsvDTO, TransactionCsvDTO> {
+    private final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     @Override
-    public BankTransaction process(BankTransaction bankTransaction) throws Exception {
-        BankTransaction transformedBankTransaction = BankTransaction.builder()
-                .id(bankTransaction.getId())
-                .transactionType(bankTransaction.getTransactionType())
-                .transactionDate(dateFormat.parse(bankTransaction.getStrTransactionDate()))
-                .transactionAmount(bankTransaction.getTransactionAmount())
-                .accountId(bankTransaction.getAccountId())
-                .build();
-        log.info("Converting (" + bankTransaction + ") into (" + transformedBankTransaction + ")");
-        return transformedBankTransaction;
+    public TransactionCsvDTO process(TransactionCsvDTO item) throws Exception {
+        //item.transactionDate(LocalDateTime.parse(item.strTransactionDate(), dateFormat));
+        return item;
     }
 }
